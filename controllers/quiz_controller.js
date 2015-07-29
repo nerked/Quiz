@@ -28,10 +28,11 @@ exports.show = function(req,res) {
 
 exports.answer = function(req,res){
     var resultado = 'Incorrecto';
+    console.log("HERE"+req.quiz.respuesta);
     if (req.query.respuesta === req.quiz.respuesta) {
       resultado = 'Correcto';
     }
-    res.render('quizes/answer', {quiz: req.quiz, respuesta: 'Incorrecto'});
+    res.render('quizes/answer', {quiz: req.quiz, respuesta: resultado});
 };
 
 //GET /quizes/new
